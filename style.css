@@ -1,0 +1,138 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+/* Шапка */
+
+.grey-line {
+    background-color: #F5F5F6;
+}
+
+.header-wrapper {
+    display: flex;
+    font-size: 11px;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 9px 100px 9px 100px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    width: 613px;
+    color: #959BA4;
+    font-weight: 500;
+}
+
+.menu-tab {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.menu-tab:hover {
+    color: black;
+}
+
+.bank-logo {
+    height: 23px;
+}
+
+.log-in {
+    background-color: white;
+    width: 58px;
+    height: 33px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    font-weight: 500;
+}
+
+/* Основная страница */
+
+.main {
+    display: flex;
+    justify-content: center; 
+}
+
+.main-wrapper {
+    width: 640px;
+}
+
+.converter {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    margin-top: 56px;
+    margin-bottom: 33px;
+}
+
+.currency-selection {
+    display: flex;
+    color: #E5E5E5;
+}
+
+input[type='radio'] {
+    display: none;
+}
+
+.money-to-change {
+    width: 259px;
+    height: 102px;
+    border: 1px solid #E5E5E5;
+    border-radius: 3px; 
+}
+
+.user-text {
+    border: none;
+}
+
+.currency-exchange-form {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.push-to-select {
+    flex: 1;
+}
+
+.left-but {
+    border-radius: 3px 0px 0px 3px;
+}
+
+.rigth-but {
+    border-radius: 0px 3px 3px 0px;
+}
+
+.currency-selection {
+    width: 259px;
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.hidden-button:checked ~ .currency-selection-text {
+    background: #833AE0;
+    color: white;
+    border: 1px solid #833AE0;
+}
+
+.currency-selection-text {
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #E5E5E5;
+}
+
+.i-have-text, .i-want-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #9F9F9F;
+}
+
+.purple-color {
+    border: 1px solid #833AE0;
+    flex: 1;
+    background: #833AE0;
+}
