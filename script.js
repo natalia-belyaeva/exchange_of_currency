@@ -1,4 +1,6 @@
 let currentData;
+let leftOldValue = 1;
+let rigthOldValue;
 
 let exchangeRate = (data, leftCurrency, rigthCurrency) => {
     let leftText = document.querySelector('.exchange-rate-left');
@@ -10,13 +12,15 @@ let exchangeRate = (data, leftCurrency, rigthCurrency) => {
 let countUserSum = () => { 
     let leftText = document.querySelector('.user-input');
     let rigthText = document.querySelector('.counted-sum');
-    rigthText.value = (leftText.value * currentData.result).toFixed(2);  
+    rigthText.value = (leftText.value * currentData.result).toFixed(4);
+    leftOldValue = leftText.value;  
 }
 
 let countUserSumBack = () => { 
     let leftText = document.querySelector('.user-input');
     let rigthText = document.querySelector('.counted-sum');
-    leftText.value = (rigthText.value * (1/ currentData.result)).toFixed(2);  
+    leftText.value = (rigthText.value * (1/ currentData.result)).toFixed(4);  
+    rigthOldValue = rigthText.value;
 }
 
 let countExchangeRate = () => {
@@ -39,11 +43,23 @@ buttons.forEach((el) => {
     el.addEventListener('change', countExchangeRate)
 })
 
-let userText = document.querySelector('.user-input');
-userText.addEventListener('keyup', countUserSum);
+let userLeftText = document.querySelector('.user-input');
+userLeftText.addEventListener('keyup', (event) => {
+    if (!isNaN(userLeftText.value)) {
+        countUserSum();
+    } else {
+        userLeftText.value = leftOldValue;
+    }
+});
 
 let userRigthText = document.querySelector('.counted-sum');
-userRigthText.addEventListener('keyup', countUserSumBack);
+userRigthText.addEventListener('keyup', ()=> {
+    if(!isNaN(userRigthText.value)) {
+        countUserSumBack();
+    } else {
+        userRigthText.value = rigthOldValue;
+    }
+});
 
 countExchangeRate();
 
